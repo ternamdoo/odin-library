@@ -9,3 +9,7 @@
 :root {
   line-height: calc(1em + 0.5rem);
 }
+
+h1 {
+  text-align: center;
+}
