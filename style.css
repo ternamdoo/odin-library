@@ -17,3 +17,9 @@ body {
 h1 {
   text-align: center;
 }
+
+.card {
+  & img {
+    height: 250px;
+  }
+}
