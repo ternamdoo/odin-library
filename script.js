@@ -31,20 +31,17 @@ addBookToLibrary('Animal Farm', 'George Orwell', 141, 'https://images-na.ssl-ima
 addBookToLibrary('The Hunger Games', 'Suzanne Collins', 374, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1586722975i/2767052.jpg', 4.35);
 
 const bookShelf = document.createElement('div');
-bookShelf.setAttribute('id', 'container')
 body.appendChild(bookShelf);
+bookShelf.setAttribute('id', 'container')
 
 myLibrary.forEach( (book) => {
   const bookCard = document.createElement('div');
-  bookCard.setAttribute('class', 'card');
 
   const bookCover = document.createElement('div');
   const coverImage = document.createElement('img');
   coverImage.setAttribute('src', book.imageURL);
   coverImage.setAttribute('alt', 'Book cover photo.');
   bookCover.append(coverImage);
-  // Add class for styling
-  bookCover.setAttribute('class', 'image');
 
   const bookInfo = document.createElement('div');
   const bookTitle = document.createElement('div');
@@ -60,7 +57,9 @@ myLibrary.forEach( (book) => {
   bookCard.append(bookCover, bookInfo)
   bookShelf.append(bookCard);
 
-  // Add class for styling
+  // Add IDs and Classes for styling
+  bookCard.setAttribute('class', 'card');
+  bookCover.setAttribute('class', 'image');
   bookInfo.setAttribute('class', 'book-info')
 })
 
