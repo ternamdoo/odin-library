@@ -39,31 +39,29 @@ myLibrary.forEach( (book) => {
   bookCard.setAttribute('class', 'card');
 
   const bookCover = document.createElement('div');
-  bookCover.setAttribute('class', 'image');
   const coverImage = document.createElement('img');
   coverImage.setAttribute('src', book.imageURL);
   coverImage.setAttribute('alt', 'Book cover photo.');
   bookCover.append(coverImage);
+  // Add class for styling
+  bookCover.setAttribute('class', 'image');
 
   const bookInfo = document.createElement('div');
-  bookInfo.setAttribute('class', 'book-info')
-
   const bookTitle = document.createElement('div');
-  bookTitle.textContent = book.title;
-
   const bookAuthor = document.createElement('div');
-  bookAuthor.textContent = `by ${book.author}`;
-
   const bookPages = document.createElement('div');
-  bookPages.textContent = `${book.pages} pages`;
-
   const bookRating = document.createElement('div');
+
+  bookTitle.textContent = book.title;
+  bookAuthor.textContent = `by ${book.author}`;
+  bookPages.textContent = `${book.pages} pages`;
   bookRating.textContent = `${book.rating}`;
-
   bookInfo.append(bookTitle, bookAuthor, bookPages, bookRating)
-
   bookCard.append(bookCover, bookInfo)
   bookShelf.append(bookCard);
+
+  // Add class for styling
+  bookInfo.setAttribute('class', 'book-info')
 })
 
 body.append(bookShelf);
