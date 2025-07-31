@@ -32,7 +32,7 @@ addBookToLibrary('The Hunger Games', 'Suzanne Collins', 374, 'https://images-na.
 
 const bookShelf = document.createElement('div');
 body.appendChild(bookShelf);
-bookShelf.setAttribute('id', 'container')
+bookShelf.setAttribute('id', 'container');
 
 myLibrary.forEach( (book) => {
   const bookCard = document.createElement('div');
@@ -55,14 +55,14 @@ myLibrary.forEach( (book) => {
   bookPages.textContent = `${book.pages} pages`;
   readStatus.textContent = book.readStatus === true ? 'Read' : 'Not Read';
   bookRating.textContent = `${book.rating}`;
-  bookInfo.append(bookTitle, bookAuthor, bookPages, bookRating, readStatus)
-  bookCard.append(bookCover, bookInfo)
+  bookInfo.append(bookTitle, bookAuthor, bookPages, bookRating, readStatus);
+  bookCard.append(bookCover, bookInfo);
   bookShelf.append(bookCard);
 
-  // Add IDs and Classes for styling
+  // Add IDs and Classes to the elements for styling
   bookCard.setAttribute('class', 'card');
   bookCover.setAttribute('class', 'image');
-  bookInfo.setAttribute('class', 'book-info')
+  bookInfo.setAttribute('class', 'book-info');
 })
 
 body.append(bookShelf);
