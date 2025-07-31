@@ -11,15 +11,34 @@
 }
 
 body {
+  background-color: #e0dedb;
   padding: 1rem;
 }
 
 h1 {
   text-align: center;
+  margin: 2rem 0;
+}
+
+#container {
+  width: 100%;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  align-items: center;
+  gap: 20px;
+
 }
 
 .card {
+  background-color: #c6c1bb;
+  border-radius: 4px;
+  padding: .5rem;
+  display: flex;
+  gap: 20px;
+
   & img {
     height: 250px;
+    border-radius: 4px;
   }
 }
