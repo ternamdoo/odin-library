@@ -1,7 +1,7 @@
-const body = document.querySelector('body');
-const h1 = document.createElement('h1');
-h1.textContent = 'Library';
-body.appendChild(h1)
+// const body = document.querySelector('body');
+// const h1 = document.createElement('h1');
+// h1.textContent = 'Library';
+// body.appendChild(h1)
 
 const myLibrary = [];
 
@@ -30,39 +30,44 @@ addBookToLibrary(1984, 'George Orwell', 368, 'https://images-na.ssl-images-amazo
 addBookToLibrary('Animal Farm', 'George Orwell', 141, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1325861570i/170448.jpg', false, 4.01);
 addBookToLibrary('The Hunger Games', 'Suzanne Collins', 374, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1586722975i/2767052.jpg', false, 4.35);
 
-const bookShelf = document.createElement('div');
-body.appendChild(bookShelf);
-bookShelf.setAttribute('id', 'container');
+// const bookShelf = document.createElement('div');
+// body.appendChild(bookShelf);
+// bookShelf.setAttribute('id', 'container');
 
-myLibrary.forEach( (book) => {
-  const bookCard = document.createElement('div');
+// myLibrary.forEach( (book) => {
+//   const bookCard = document.createElement('div');
 
-  const bookCover = document.createElement('div');
-  const coverImage = document.createElement('img');
-  coverImage.setAttribute('src', book.imageURL);
-  coverImage.setAttribute('alt', 'Book cover photo.');
-  bookCover.append(coverImage);
+//   const bookCover = document.createElement('div');
+//   const coverImage = document.createElement('img');
+//   coverImage.setAttribute('src', book.imageURL);
+//   coverImage.setAttribute('alt', 'Book cover photo.');
+//   bookCover.append(coverImage);
 
-  const bookInfo = document.createElement('div');
-  const bookTitle = document.createElement('div');
-  const bookAuthor = document.createElement('div');
-  const bookPages = document.createElement('div');
-  const readStatus = document.createElement('div');
-  const bookRating = document.createElement('div');
+//   const bookInfo = document.createElement('div');
+//   const bookTitle = document.createElement('div');
+//   const bookAuthor = document.createElement('div');
+//   const bookPages = document.createElement('div');
+//   const readStatus = document.createElement('div');
+//   const bookRating = document.createElement('div');
 
-  bookTitle.textContent = book.title;
-  bookAuthor.textContent = `by ${book.author}`;
-  bookPages.textContent = `${book.pages} pages`;
-  readStatus.textContent = book.readStatus === true ? 'Read' : 'Not Read';
-  bookRating.textContent = `${book.rating}`;
-  bookInfo.append(bookTitle, bookAuthor, bookPages, bookRating, readStatus);
-  bookCard.append(bookCover, bookInfo);
-  bookShelf.append(bookCard);
+//   bookTitle.textContent = book.title;
+//   bookAuthor.textContent = `by ${book.author}`;
+//   bookPages.textContent = `${book.pages} pages`;
+//   readStatus.textContent = book.readStatus === true ? 'Read' : 'Not Read';
+//   bookRating.textContent = `${book.rating}`;
+//   bookInfo.append(bookTitle, bookAuthor, bookPages, bookRating, readStatus);
+//   bookCard.append(bookCover, bookInfo);
+//   bookShelf.append(bookCard);
 
-  // Add IDs and Classes to the elements for styling
-  bookCard.setAttribute('class', 'card');
-  bookCover.setAttribute('class', 'image');
-  bookInfo.setAttribute('class', 'book-info');
-})
+//   // Add IDs and Classes to the elements for styling
+//   bookCard.setAttribute('class', 'card');
+//   bookCover.setAttribute('class', 'image');
+//   bookInfo.setAttribute('class', 'book-info');
+// })
 
-body.append(bookShelf);
+// body.append(bookShelf);
+
+
+// // Create a form modal
+// const modal = document.createElement('div');
+// const formCode = ``;
