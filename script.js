@@ -63,3 +63,11 @@ myLibrary.forEach( (book) => {
   bookCard.setAttribute('class', 'card');
   bookInfo.setAttribute('class', 'book-info');
 })
+
+// Trigger form to add new book
+const newBookBtn = document.querySelector('#new-book-btn');
+const showDialog = document.querySelector('#add-book-dialog');
+
+newBookBtn.addEventListener('click', () => {
+  showDialog.showModal();
+});

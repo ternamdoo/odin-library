@@ -12,43 +12,43 @@
   <h1> My Book Library</h1>
 
 <div>
-  <button>Add New Book</button>
+  <button id="new-book-btn">Add New Book</button>
 </div>
+<dialog id="add-book-dialog">
+  <form>
+    <div>
+      <label for="title">Book Title:</label>
+      <input type="text" id="title" name="title">
+    </div>
+    <div>
+      <label for="author">Book Author:</label>
+      <input type="text" id="author" name="author">
+    </div>
+    <div>
+      <label for="pages">Number of Pages:</label>
+      <input type="number" id="pages" name="pages">
+    </div>
+    <div>
+      <label for="rating">Rating</label>
+      <input type="number" id="rating" name="rating">
+    </div>
+    <div>
+      <label for="cover-url">Book cover URL:</label>
+      <input type="url" id="cover-url" name="cover-url">
+    </div>
+    <div>
+      <label for="read-status">Have you read this book?</label>
+      <select name="read-status" id="read-status">
+        <option value="" selected disabled hidden>Select an option</option>
+        <option value="Read">Yes</option>
+        <option value="Not read">No</option>
+      </select>
+    </div>
+  </form>
+</dialog>
 
   <div id="book-shelf"></div>
 
-  <!-- <dialog>
-    <form action="">
-      <div>
-        <label for="title">Book Title:</label>
-        <input type="text" id="title" name="title">
-      </div>
-      <div>
-        <label for="author">Book Author:</label>
-        <input type="text" id="author" name="author">
-      </div>
-      <div>
-        <label for="pages">Number of Pages:</label>
-        <input type="number" id="pages" name="pages">
-      </div>
-      <div>
-        <label for="rating">Rating</label>
-        <input type="number" id="rating" name="rating">
-      </div>
-      <div>
-        <label for="cover-url">Book cover URL:</label>
-        <input type="url" id="cover-url" name="cover-url">
-      </div>
-      <div>
-        <label for="read-status">Have you read this book?</label>
-        <select name="read-status" id="read-status">
-          <option value="" selected disabled hidden>Select an option</option>
-          <option value="Read">Yes</option>
-          <option value="Not read">No</option>
-        </select>
-      </div>
-    </form>
-  </dialog> -->
 
 </body>
 </html>
