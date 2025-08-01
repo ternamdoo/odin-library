@@ -18,7 +18,7 @@
   <form>
     <div>
       <label for="title">Book Title:</label>
-      <input type="text" id="title" name="title">
+      <input type="text" id="title" name="title" autofocus>
     </div>
     <div>
       <label for="author">Book Author:</label>
@@ -43,6 +43,10 @@
         <option value="Read">Yes</option>
         <option value="Not read">No</option>
       </select>
+    </div>
+    <div>
+      <button value="cancel" formmethod="dialog">Cancel</button>
+      <button id="confirm-btn" value="default">Confirm</button>
     </div>
   </form>
 </dialog>
