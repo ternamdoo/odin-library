@@ -66,13 +66,21 @@ myLibrary.forEach( (book) => {
 
 // Trigger form to add new book
 const newBookBtn = document.querySelector('#new-book-btn');
-const showDialog = document.querySelector('#add-book-dialog');
+const addBookDialog = document.querySelector('#add-book-dialog');
 const confirmBtn = document.querySelector('#confirm-btn');
+const closeDialog = document.querySelector('#close-dialog');
+
 
 newBookBtn.addEventListener('click', () => {
-  showDialog.showModal();
+  addBookDialog.showModal();
 });
 
 confirmBtn.addEventListener('click', (event) => {
   event.preventDefault();
+  addBookDialog.close();
+})
+
+closeDialog.addEventListener('click', (event) => {
+  event.preventDefault();
+  addBookDialog.close();
 })
