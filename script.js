@@ -30,7 +30,9 @@ newBookBtn.addEventListener('click', () => {
 
 confirmBtn.addEventListener('click', (event) => {
   event.preventDefault();
-  // addBookToLibrary(getDataFromForm);
+  const formDataArray = getDataFromForm();
+  addBookToLibrary(...formDataArray);
+  showBooks();
   addBookDialog.close();
 });
 
@@ -66,6 +68,7 @@ function addBookToLibrary(title, author, pages, imageURL, readStatus, rating) {
 
 // Function to display each book information on the page
 function showBooks() {
+  bookShelf.replaceChildren();
   myLibrary.forEach( (book) => {
     const bookCard = document.createElement('div');
 
