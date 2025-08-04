@@ -79,6 +79,7 @@ newBookBtn.addEventListener('click', () => {
 
 confirmBtn.addEventListener('click', (event) => {
   event.preventDefault();
+  // addBookToLibrary(getDataFromForm);
   addBookDialog.close();
 });
 
@@ -91,3 +92,18 @@ closeDialog.addEventListener('click', (event) => {
   event.preventDefault();
   addBookDialog.close();
 });
+
+
+// Get data from form
+const formData = {};
+function getDataFromForm() {
+  // Collect the data in the order it will be passed to the addBookToLibrary function
+  formData.title = document.querySelector('#title').value;
+  formData.author = document.querySelector('#author').value;
+  formData.pages = parseInt(document.querySelector('#pages').value);
+  formData.imageURL = document.querySelector('#cover-url').value;
+  formData.rating = parseFloat(document.querySelector('#rating').value);
+  formData.readStatus = document.querySelector('#read-status').value === 'Yes' ? true : false;
+
+  return Object.values(formData);
+}
