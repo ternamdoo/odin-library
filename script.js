@@ -1,25 +1,14 @@
 // Create an array to contain added books
 const myLibrary = [];
 
-// Initialize Book Constructor
-function Book(title, author, pages, imageURL, readStatus, rating) {
-  if (!new.target) {
-    throw Error("You must use the 'new' operator to call the constructor");
-  }
-  this.id = crypto.randomUUID();
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.imageURL = imageURL;
-  this.readStatus = readStatus;
-  this.rating = rating;
-}
-
-// Function to add create a new book and add it to the book array
-function addBookToLibrary(title, author, pages, imageURL, readStatus, rating) {
-  let book = new Book(title, author, pages, imageURL, readStatus, rating);
-  myLibrary.push(book);
-}
+// Select HTML elements
+const bookShelf = document.querySelector('#book-shelf');
+const newBookBtn = document.querySelector('#new-book-btn');
+const addBookForm = document.querySelector('#add-book-form');
+const addBookDialog = document.querySelector('#add-book-dialog');
+const confirmBtn = document.querySelector('#confirm-btn');
+const clearBtn = document.querySelector('#clear-btn');
+const closeDialog = document.querySelector('#close-dialog');
 
 // Add some books to the library
 const books = [
@@ -32,47 +21,9 @@ books.forEach( (book) => {
   addBookToLibrary(...book);
 });
 
-// Display each book information on the page
-const bookShelf = document.querySelector('#book-shelf');
-
-myLibrary.forEach( (book) => {
-  const bookCard = document.createElement('div');
-
-  const coverImage = document.createElement('img');
-  coverImage.setAttribute('src', book.imageURL);
-  coverImage.setAttribute('alt', 'Book cover photo.');
-
-  const bookInfo = document.createElement('div');
-  const bookTitle = document.createElement('div');
-  const bookAuthor = document.createElement('div');
-  const bookPages = document.createElement('div');
-  const readStatus = document.createElement('div');
-  const bookRating = document.createElement('div');
-
-  bookTitle.textContent = book.title;
-  bookAuthor.textContent = `by ${book.author}`;
-  bookPages.textContent = `${book.pages} pages`;
-  readStatus.textContent = book.readStatus === true ? 'Read' : 'Not Read';
-  bookRating.textContent = `${book.rating}`;
-
-  bookInfo.append(bookTitle, bookAuthor, bookPages, bookRating, readStatus);
-  bookCard.append(coverImage, bookInfo);
-  bookShelf.append(bookCard);
-
-  // Add IDs and Classes to the elements for styling
-  bookCard.setAttribute('class', 'card');
-  bookInfo.setAttribute('class', 'book-info');
-})
+showBooks();
 
 // Trigger form to add new book
-const newBookBtn = document.querySelector('#new-book-btn');
-const addBookForm = document.querySelector('#add-book-form');
-const addBookDialog = document.querySelector('#add-book-dialog');
-const confirmBtn = document.querySelector('#confirm-btn');
-const clearBtn = document.querySelector('#clear-btn');
-const closeDialog = document.querySelector('#close-dialog');
-
-
 newBookBtn.addEventListener('click', () => {
   addBookDialog.showModal();
 });
@@ -93,10 +44,61 @@ closeDialog.addEventListener('click', (event) => {
   addBookDialog.close();
 });
 
+// Initialize Book Constructor
+function Book(title, author, pages, imageURL, readStatus, rating) {
+  if (!new.target) {
+    throw Error("You must use the 'new' operator to call the constructor");
+  }
+  this.id = crypto.randomUUID();
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.imageURL = imageURL;
+  this.readStatus = readStatus;
+  this.rating = rating;
+}
+
+// Function to add create a new book and add it to the book array
+function addBookToLibrary(title, author, pages, imageURL, readStatus, rating) {
+  let book = new Book(title, author, pages, imageURL, readStatus, rating);
+  myLibrary.push(book);
+}
+
+// Function to display each book information on the page
+function showBooks() {
+  myLibrary.forEach( (book) => {
+    const bookCard = document.createElement('div');
+
+    const coverImage = document.createElement('img');
+    coverImage.setAttribute('src', book.imageURL);
+    coverImage.setAttribute('alt', 'Book cover photo.');
+
+    const bookInfo = document.createElement('div');
+    const bookTitle = document.createElement('div');
+    const bookAuthor = document.createElement('div');
+    const bookPages = document.createElement('div');
+    const readStatus = document.createElement('div');
+    const bookRating = document.createElement('div');
+
+    bookTitle.textContent = book.title;
+    bookAuthor.textContent = `by ${book.author}`;
+    bookPages.textContent = `${book.pages} pages`;
+    readStatus.textContent = book.readStatus === true ? 'Read' : 'Not Read';
+    bookRating.textContent = `${book.rating}`;
+
+    bookInfo.append(bookTitle, bookAuthor, bookPages, bookRating, readStatus);
+    bookCard.append(coverImage, bookInfo);
+    bookShelf.append(bookCard);
+
+    // Add IDs and Classes to the elements for styling
+    bookCard.setAttribute('class', 'card');
+    bookInfo.setAttribute('class', 'book-info');
+  });
+}
 
 // Get data from form
-const formData = {};
 function getDataFromForm() {
+  const formData = {};
   // Collect the data in the order it will be passed to the addBookToLibrary function
   formData.title = document.querySelector('#title').value;
   formData.author = document.querySelector('#author').value;
