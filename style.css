@@ -54,7 +54,23 @@ h1 {
   transform: translate(-50%, -50%);
 }
 
+.btn {
+  padding: .5rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background-color: #121212;
+  color: #e8e6e3;
 
+  &:hover {
+    cursor: pointer;
+    background-color: #137498;
+  }
+
+  &:active {
+    background-color: grey;
+  }
+}
 
 .btn.remove-book {
   background-color: #c53a3d;

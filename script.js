@@ -83,19 +83,22 @@ function showBooks() {
     const bookPages = document.createElement('div');
     const readStatus = document.createElement('div');
     const bookRating = document.createElement('div');
+    const removeBook = document.createElement('button');
 
     bookTitle.textContent = book.title;
     bookAuthor.textContent = `by ${book.author}`;
     bookPages.textContent = `${book.pages} pages`;
     readStatus.textContent = book.readStatus === true ? 'Read' : 'Not Read';
     bookRating.textContent = `${book.rating}`;
+    removeBook.textContent = 'Remove Book';
 
-    bookInfo.append(bookTitle, bookAuthor, bookPages, bookRating, readStatus);
+    bookInfo.append(bookTitle, bookAuthor, bookPages, bookRating, readStatus, removeBook);
     bookCard.append(coverImage, bookInfo);
     bookShelf.append(bookCard);
 
     // Add IDs and Classes to the elements for styling
     bookCard.dataset.id = book.id;
+    removeBook.setAttribute('class', 'btn remove-book');
     bookCard.setAttribute('class', 'card');
     bookInfo.setAttribute('class', 'book-info');
   });
