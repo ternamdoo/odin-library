@@ -95,6 +95,7 @@ function showBooks() {
     bookShelf.append(bookCard);
 
     // Add IDs and Classes to the elements for styling
+    bookCard.dataset.id = book.id;
     bookCard.setAttribute('class', 'card');
     bookInfo.setAttribute('class', 'book-info');
   });
