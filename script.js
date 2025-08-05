@@ -32,6 +32,7 @@ confirmBtn.addEventListener('click', (event) => {
   event.preventDefault();
   const formDataArray = getDataFromForm();
   addBookToLibrary(...formDataArray);
+  addBookForm.reset();
   showBooks();
   addBookDialog.close();
 });
