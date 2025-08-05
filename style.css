@@ -53,3 +53,10 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+
+
+.btn.remove-book {
+  background-color: #c53a3d;
+  color: #ffffff;
+}
