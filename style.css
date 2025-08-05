@@ -72,7 +72,10 @@ h1 {
   }
 }
 
-.btn.remove-book {
+.remove-book {
   background-color: #c53a3d;
-  color: #ffffff;
+
+  &:hover {
+    background-color: #ff0000;
+  }
 }
