@@ -26,7 +26,6 @@ h1 {
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   align-items: center;
   gap: 20px;
-
 }
 
 .card {
@@ -68,14 +67,19 @@ h1 {
   }
 
   &:active {
-    background-color: grey;
+    background-color: #808080;
   }
 }
 
-.remove-book {
+.remove-book,
+.clr-btn {
   background-color: #c53a3d;
+}
 
-  &:hover {
-    background-color: #ff0000;
-  }
+.cnfm-btn {
+  background-color: #279581;
+}
+
+.cncl-btn {
+  background-color: #313537;
 }
