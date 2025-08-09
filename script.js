@@ -39,13 +39,31 @@ confirmBtn.addEventListener('click', (event) => {
 
 clearBtn.addEventListener('click', (event) => {
   event.preventDefault();
-  addBookForm.reset();
+  const userConfirm = confirm('Do you want to clear the form?');
+  if (userConfirm === true) {
+    addBookForm.reset();
+  }
 });
 
 closeDialog.addEventListener('click', (event) => {
   event.preventDefault();
   addBookDialog.close();
 });
+
+// const removeButtons  = document.querySelectorAll('.btn.remove-book');
+// removeButtons.forEach( (button) => {
+//   button.addEventListener('click', (event) => {
+//     const bookID = event.target.parentNode.parentNode.dataset.id;
+//     alert(bookID);
+//     myLibrary.forEach( (book) => {
+//       if (book.id === bookID) {
+//         const bookIndex = myLibrary.findIndex(book);
+//         myLibrary.splice(bookIndex, 1);
+//         showBooks();
+//       }
+//     });
+//   });
+// });
 
 // Initialize Book Constructor
 function Book(title, author, pages, imageURL, readStatus, rating) {
