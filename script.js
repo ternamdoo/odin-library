@@ -22,6 +22,7 @@ books.forEach( (book) => {
 });
 
 showBooks();
+bindRemoveBookButtons();
 
 // Trigger form to add new book
 newBookBtn.addEventListener('click', () => {
@@ -49,21 +50,6 @@ closeDialog.addEventListener('click', (event) => {
   event.preventDefault();
   addBookDialog.close();
 });
-
-// const removeButtons  = document.querySelectorAll('.btn.remove-book');
-// removeButtons.forEach( (button) => {
-//   button.addEventListener('click', (event) => {
-//     const bookID = event.target.parentNode.parentNode.dataset.id;
-//     alert(bookID);
-//     myLibrary.forEach( (book) => {
-//       if (book.id === bookID) {
-//         const bookIndex = myLibrary.findIndex(book);
-//         myLibrary.splice(bookIndex, 1);
-//         showBooks();
-//       }
-//     });
-//   });
-// });
 
 // Initialize Book Constructor
 function Book(title, author, pages, imageURL, readStatus, rating) {
@@ -116,7 +102,7 @@ function showBooks() {
 
     // Add IDs and Classes to the elements for styling
     bookCard.dataset.id = book.id;
-    removeBook.setAttribute('class', 'btn remove-book');
+    removeBook.setAttribute('class', 'btn remove-book-btn');
     bookCard.setAttribute('class', 'card');
     bookInfo.setAttribute('class', 'book-info');
   });
@@ -134,4 +120,28 @@ function getDataFromForm() {
   formData.readStatus = document.querySelector('#read-status').value === 'Yes' ? true : false;
 
   return Object.values(formData);
+}
+
+// Remove book from the library
+function removeBookFromDisplay(event) {
+  if (event.target.classList.contains('remove-book-btn')) {
+    const bookCard = event.target.closest('.card');
+    const bookId = bookCard.dataset.id;
+    const bookIndex = myLibrary.findIndex( (book) => book.id === bookId);
+    if (bookIndex !== -1) {
+      myLibrary.splice(bookIndex, 1);
+    }
+  }
+}
+
+// Click 'Remove Book' to remove a book from the library
+function bindRemoveBookButtons() {
+  const removeButtons  = document.querySelectorAll('.remove-book-btn');
+  removeButtons.forEach( (button) => {
+    button.addEventListener('click', (event) => {
+      removeBookFromDisplay(event);
+      showBooks();
+      bindRemoveBookButtons();
+    });
+  });
 }
