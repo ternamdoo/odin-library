@@ -39,7 +39,7 @@ confirmBtn.addEventListener('click', (event) => {
 
 clearBtn.addEventListener('click', (event) => {
   event.preventDefault();
-  const userConfirm = confirm('Do you want to clear the form?');
+  const userConfirm = confirm('Are you sure you want to clear the form?');
   if (userConfirm === true) {
     addBookForm.reset();
   }
