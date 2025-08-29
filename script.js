@@ -35,6 +35,7 @@ confirmBtn.addEventListener('click', (event) => {
   addBookToLibrary(...formDataArray);
   addBookForm.reset();
   showBooks();
+  bindRemoveBookButtons();
   addBookDialog.close();
 });
 
