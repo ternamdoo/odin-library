@@ -71,6 +71,10 @@ h1 {
   }
 }
 
+#new-book-btn {
+  margin: 1em 0;
+}
+
 .remove-book-btn,
 .clr-btn {
   background-color: #c53a3d;
